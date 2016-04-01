@@ -79,8 +79,6 @@
 <!-- WebRTC Peer Connections -->
 <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- -->
 <script src="https://cdn.pubnub.com/pubnub.min.js"></script>
-<script src="js/webrtc.js"></script>
-<script src="js/sound.js"></script>
 <script>(function(){
 
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -138,10 +136,10 @@ $.ajax({
     dataType: "json",
     url: "https://api.xirsys.com/getIceServers",
     data: {
-        ident: "< Your username (not your email) >",
-        secret: "< Your secret API token >",
-        domain: "< www.yourdomain.com >",
-        application: "default",
+        ident: "markcadag",
+        secret: "f2ba0602-f84c-11e5-a12b-a6d4eebf7aa3",
+        domain: "everlearn.herokuapp.com",
+        application: "everlearn",
         room: "default",
         secure: 1
     },
@@ -149,6 +147,7 @@ $.ajax({
         // data.d is where the iceServers object lives
         iceConfig = data.d.iceServers;
         console.log(iceConfig);
+         console.log("Data: " + data + "nnStatus: " + status);
     },
     async: false
 });
@@ -161,8 +160,8 @@ var img_out   = PUBNUB.$('video-thumbnail');
 var img_self  = PUBNUB.$('video-self');
 var phone     = window.phone = PHONE({
     number        : my_number.number, // listen on this line
-    publish_key   : '< Your PubNub publish key >',
-    subscribe_key : '< Your PubNub subscribe key >',
+    publish_key   : 'pub-c-7d60faa6-6656-46c3-8d6a-a10fdcc15d2a',
+    subscribe_key : 'sub-c-a901b8ca-f84c-11e5-8180-0619f8945a4f',
     ssl           : true,
     servers       : iceConfig
 });
