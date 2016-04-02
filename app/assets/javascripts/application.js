@@ -16,4 +16,5 @@
 //= require bootstrap-sprockets
 //= require sound
 //= require webrtc
+//= require rtc-controller
 //= require_tree .
